@@ -33,3 +33,11 @@ class Grid:
         return self.cells.count(" ")
 
 
+@dataclass(frozen=True)
+class Move:
+    mark: Mark
+    cell_index: int
+    before_stage: 'GameStage'
+    after_stage: 'GameStage'
+
+
