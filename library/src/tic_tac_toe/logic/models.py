@@ -3,6 +3,16 @@ import re
 from dataclasses import dataclass
 from functools import cached_property
 
+WINNING_PATTERNS = (
+    "???......",
+    "...???...",
+    "......???",
+    "?..?..?..",
+    ".?..?..?.",
+    "..?..?..?",
+    "?...?...?",
+    "..?.?.?..",
+)
 
 class Mark(enum.StrEnum):
     CROSS = "X"
@@ -38,12 +48,12 @@ class Grid:
 class Move:
     mark: Mark
     cell_index: int
-    before_stage: 'GameStage'
-    after_stage: 'GameStage'
+    before_stage: 'GameState'
+    after_stage: 'GameState'
 
 
 @dataclass(frozen=True)
-class GameStage:
+class GameState:
     grid: Grid
     starting_mark: Mark = Mark("X")
 
@@ -62,3 +72,19 @@ class GameStage:
     @cached_property
     def tie(self) -> bool:
         return self.grid.empty_count == 0 and self.winner is None
+
+    @cached_property
+    def winner(self) -> Mark | str | None:
+        for pattern in WINNING_PATTERNS:
+            for mark in Mark:
+                if re.match(pattern.replace("?", mark), self.grid.cells):
+                    return mark
+        return None
+
+    @cached_property
+    def winning_cells(self) -> list[int]:
+        for pattern in WINNING_PATTERNS:
+            for mark in Mark:
+                if re.match(pattern.replace("?", mark), self.grid.cells):
+                    return [i for i, c in enumerate(pattern) if c == "?"]
+        return []
