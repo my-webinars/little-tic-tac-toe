@@ -36,7 +36,7 @@ def print_solid(cells: Iterable[str]) -> None:
     print(
         textwrap.dedent(
             """\
-            A   B   C
+             A   B   C
            ------------
         1 ┆  {0} │ {1} │ {2}
           ┆ ───┼───┼───
