@@ -92,3 +92,13 @@ class GameState:
                 if re.match(pattern.replace("?", mark), self.grid.cells):
                     return [i for i, c in enumerate(pattern) if c == "?"]
         return []
+
+    @cached_property
+    def possible_moves(self) -> list[Move]:
+        moves = []
+        if not self.game_over:
+            for match in re.finditer(r"\s", self.grid.cells):
+                moves.append(self.make_move_to(match.start()))
+        return moves
+
+
