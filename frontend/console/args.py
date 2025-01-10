@@ -1,8 +1,10 @@
 import argparse
 from typing import NamedTuple
 
-from tic_tac_toe.game.players import Player, RandomComputerPlayer, MinimaxComputerPlayer
-from tic_tac_toe.logic.models import Mark
+from tic_tac_toe_3x3.game.players import (MinimaxComputerPlayer, Player,
+                                          RandomComputerPlayer)
+from tic_tac_toe_3x3.logic.models import Mark
+
 from .players import ConsolePlayer
 
 PLAYER_CLASSES = {

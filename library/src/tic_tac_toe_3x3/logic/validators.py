@@ -3,11 +3,12 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from tic_tac_toe.game.players import Player
-    from tic_tac_toe.logic.models import Grid, GameState, Mark
+    from tic_tac_toe_3x3.game.players import Player
+    from tic_tac_toe_3x3.logic.models import Grid, GameState, Mark
 
 import re
-from tic_tac_toe.logic.exceptions import InvalidGameState
+
+from tic_tac_toe_3x3.logic.exceptions import InvalidGameState
 
 
 def validate_grid(grid: Grid) -> None:

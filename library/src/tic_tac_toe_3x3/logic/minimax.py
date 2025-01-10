@@ -1,6 +1,6 @@
 from functools import partial
 
-from tic_tac_toe.logic.models import GameState, Mark, Move
+from tic_tac_toe_3x3.logic.models import GameState, Mark, Move
 
 
 def find_best_move(game_state: GameState) -> Move | None:

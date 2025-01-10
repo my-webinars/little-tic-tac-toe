@@ -1,11 +1,11 @@
 from dataclasses import dataclass
 from typing import Callable, TypeAlias
 
-from tic_tac_toe.game.players import Player
-from tic_tac_toe.game.renderers import Renderer
-from tic_tac_toe.logic.exceptions import InvalidMove
-from tic_tac_toe.logic.models import GameState, Grid, Mark
-from tic_tac_toe.logic.validators import validate_players
+from tic_tac_toe_3x3.game.players import Player
+from tic_tac_toe_3x3.game.renderers import Renderer
+from tic_tac_toe_3x3.logic.exceptions import InvalidMove
+from tic_tac_toe_3x3.logic.models import GameState, Grid, Mark
+from tic_tac_toe_3x3.logic.validators import validate_players
 
 ErrorHandler: TypeAlias = Callable[[Exception], None]
 

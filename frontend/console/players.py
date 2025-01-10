@@ -1,8 +1,8 @@
 import re
 
-from tic_tac_toe.game.players import Player
-from tic_tac_toe.logic.exceptions import InvalidMove
-from tic_tac_toe.logic.models import GameState, Move
+from tic_tac_toe_3x3.game.players import Player
+from tic_tac_toe_3x3.logic.exceptions import InvalidMove
+from tic_tac_toe_3x3.logic.models import GameState, Move
 
 
 class ConsolePlayer(Player):

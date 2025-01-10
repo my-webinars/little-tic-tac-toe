@@ -2,9 +2,9 @@ import abc
 import random
 import time
 
-from tic_tac_toe.logic.exceptions import InvalidMove
-from tic_tac_toe.logic.minimax import find_best_move
-from tic_tac_toe.logic.models import GameState, Mark, Move
+from tic_tac_toe_3x3.logic.exceptions import InvalidMove
+from tic_tac_toe_3x3.logic.minimax import find_best_move
+from tic_tac_toe_3x3.logic.models import GameState, Mark, Move
 
 
 class Player(metaclass=abc.ABCMeta):

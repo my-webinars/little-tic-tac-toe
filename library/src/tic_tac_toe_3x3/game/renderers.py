@@ -1,6 +1,7 @@
 import abc
 
-from tic_tac_toe.logic.models import GameState
+from tic_tac_toe_3x3.logic.models import GameState
+
 
 class Renderer(metaclass=abc.ABCMeta):
     @abc.abstractmethod

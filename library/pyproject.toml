@@ -3,5 +3,14 @@ requires = ["setuptools>=64.0.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "tic-tac-toe"
+name = "tic_tac_toe_3x3"
 version = "1.0.0"
+description = "A simple tic-tac-toe game for 2 players and 3x3 field."
+authors = [{name = "Real Python", email = "info@realpython.com"}, {name = "Kostyantyn Zivenko", email = "kos.zivenko@gmail.com"}]
+keywords = ["tic-tac-toe", "game", "3x3", "python", "education", "tutorial"]
+requires-python = ">=3.11.0"
+readme = "README.md"
+
+
+[project.optional-dependencies]
+dev = ["black", "flake8", "isort", "pytest"]

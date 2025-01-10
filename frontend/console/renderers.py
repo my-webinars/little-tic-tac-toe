@@ -1,8 +1,8 @@
 import textwrap
 from typing import Iterable
 
-from tic_tac_toe.game.renderers import Renderer
-from tic_tac_toe.logic.models import GameState
+from tic_tac_toe_3x3.game.renderers import Renderer
+from tic_tac_toe_3x3.logic.models import GameState
 
 
 class ConsoleRenderer(Renderer):
