@@ -1,5 +1,4 @@
 import abc
-import random
 import time
 
 from tic_tac_toe_3x3.logic.exceptions import InvalidMove

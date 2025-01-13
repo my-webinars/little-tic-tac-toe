@@ -12,6 +12,11 @@ from tic_tac_toe_3x3.logic.exceptions import InvalidGameState
 
 
 def validate_grid(grid: Grid) -> None:
+    """Validates the grid state.
+
+    valid grid elements: space, X, O. Total number of elements - 9.
+    If any of these requirements are violated - a ValueError exception is generated.
+    """
     if not re.match(r"^[\sXO]{9}$", grid.cells):
         raise ValueError("Must contain 9 cells of: X, O, or space")
 
