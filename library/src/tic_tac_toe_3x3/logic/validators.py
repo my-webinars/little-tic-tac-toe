@@ -22,6 +22,7 @@ def validate_grid(grid: Grid) -> None:
 
 
 def validate_game_state(game_state: GameState) -> None:
+    """Validates the game state: consolidates game state validation with other validators"""
     validate_number_of_marks(game_state.grid)
     validate_starting_mark(game_state.grid, game_state.starting_mark)
     validate_winner(
@@ -30,11 +31,18 @@ def validate_game_state(game_state: GameState) -> None:
 
 
 def validate_number_of_marks(grid: Grid) -> None:
+    """Validates the game state based on an analysis of the numbers of players' marks on the grid:
+    for a real game, the number of players' marks cannot differ by more than one or be the same.
+    """
     if abs(grid.x_count - grid.o_count) > 1:
         raise InvalidGameState("Wrong number of Xs and Os")
 
 
 def validate_starting_mark(grid: Grid, starting_mark: Mark) -> None:
+    """Validates the game state by checking the player who started:
+    for a correct state, the marks on the field that predominate in number can only be the marks
+    of the player who made the first move.
+    """
     if grid.x_count > grid.o_count:
         if starting_mark != "X":
             raise InvalidGameState("Wrong starting mark")
@@ -46,6 +54,12 @@ def validate_starting_mark(grid: Grid, starting_mark: Mark) -> None:
 def validate_winner(
         grid: Grid, starting_mark: Mark, winner: Mark | None
 ) -> None:
+    """Validates the game state based on winner analysis:
+    if the player who started the game won, then his marks must be more than
+    the opposing marks,
+    if the other player won, then there must be the same number of
+    marks on the field.
+    """
     if winner == "X":
         if starting_mark == "X":
             if grid.x_count <= grid.o_count:
@@ -63,5 +77,6 @@ def validate_winner(
 
 
 def validate_players(player1: Player, player2: Player) -> None:
+    """Validates the players' marks: the players must use different marks"""
     if player1.mark is player2.mark:
         raise ValueError("Players must use different marks")
