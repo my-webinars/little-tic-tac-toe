@@ -22,7 +22,7 @@ WINNING_PATTERNS = (
 class Mark(enum.StrEnum):
     """Acceptable player symbols."""
     CROSS = "X"
-    NAUGHT = "O"
+    NAUGHT = "0"
 
     @property
     def other(self) -> "Mark":
@@ -46,7 +46,7 @@ class Grid:
     @cached_property
     def o_count(self) -> int:
         """Returns the number of player 'O's marks on the grid."""
-        return self.cells.count("O")
+        return self.cells.count("0")
 
     @cached_property
     def empty_count(self) -> int:

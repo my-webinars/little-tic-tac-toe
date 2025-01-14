@@ -17,8 +17,8 @@ def validate_grid(grid: Grid) -> None:
     valid grid elements: space, X, O. Total number of elements - 9.
     If any of these requirements are violated - a ValueError exception is generated.
     """
-    if not re.match(r"^[\sXO]{9}$", grid.cells):
-        raise ValueError("Must contain 9 cells of: X, O, or space")
+    if not re.match(r"^[\sX0]{9}$", grid.cells):
+        raise ValueError("Must contain 9 cells of: X, 0(null), or space")
 
 
 def validate_game_state(game_state: GameState) -> None:
@@ -47,7 +47,7 @@ def validate_starting_mark(grid: Grid, starting_mark: Mark) -> None:
         if starting_mark != "X":
             raise InvalidGameState("Wrong starting mark")
     elif grid.o_count > grid.x_count:
-        if starting_mark != "O":
+        if starting_mark != "0":
             raise InvalidGameState("Wrong starting mark")
 
 
@@ -67,13 +67,13 @@ def validate_winner(
         else:
             if grid.x_count != grid.o_count:
                 raise InvalidGameState("Wrong number of Xs")
-    elif winner == "O":
-        if starting_mark == "O":
+    elif winner == "0":
+        if starting_mark == "0":
             if grid.o_count <= grid.x_count:
-                raise InvalidGameState("Wrong number of Os")
+                raise InvalidGameState("Wrong number of 0s")
         else:
             if grid.o_count != grid.x_count:
-                raise InvalidGameState("Wrong number of Os")
+                raise InvalidGameState("Wrong number of 0s")
 
 
 def validate_players(player1: Player, player2: Player) -> None:
