@@ -4,9 +4,9 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "tic_tac_toe_3x3"
-version = "1.0.1"
+version = "1.0.4"
 description = "A simple tic-tac-toe game for 2 players and 3x3 field."
-authors = [{name = "Real Python", email = "info@realpython.com"}, {name = "Kostyantyn Zivenko", email = "kos.zivenko@gmail.com"}]
+authors = [{name = "Kostyantyn Zivenko", email = "kos.zivenko@gmail.com"}, {name = "Real Python", email = "info@realpython.com"}]
 keywords = ["tic-tac-toe", "game", "3x3", "python", "education", "tutorial"]
 requires-python = ">=3.11.0"
 readme = "README.md"
@@ -18,6 +18,8 @@ classifiers = [
     "Programming Language :: Python :: 3",
 ]
 
+[project.urls]
+Repository = "https://github.com/KonstZiv/little-tic-tac-toe"
 
 [project.optional-dependencies]
 dev = ["black", "flake8", "isort", "pytest"]
