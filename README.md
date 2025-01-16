@@ -105,12 +105,9 @@ __Створення власної реалізації гри__ на осно�
 - ### tic_tac_toe_3x3
     - #### tic_tac_toe_3x3.game
     пакет game містить елементи які реалізують ігровий механізм - в тому разі і в загальному вигляді (абстрактні класи):
-
-        - [#### Модуль `tic_tac_toe_3x3.game.engine`](#модуль-tic_tac_toe_3x3gameengine)
-
-        - [#### Модуль `tic_tac_toe_3x3.game.players`](#модуль-tic_tac_toe_3x3gameplayers)
-
-        - [#### Модуль `tic_tac_toe_3x3.game.renderers`](#модуль-tic_tac_toe_3x3gamerenderers)
+      - [#### Модуль `tic_tac_toe_3x3.game.engine`](#модуль-tic_tac_toe_3x3gameengine)
+      - [#### Модуль `tic_tac_toe_3x3.game.players`](#модуль-tic_tac_toe_3x3gameplayers)
+      - [#### Модуль `tic_tac_toe_3x3.game.renderers`](#модуль-tic_tac_toe_3x3gamerenderers)
 
     - #### Модуль `tic_tac_toe_3x3.game.engine`
         - ##### Клас `TicTacToe`
