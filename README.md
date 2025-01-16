@@ -1,6 +1,6 @@
 # tic-tac-toe_3x3
 
-<img alt="tic-tac-toe screen" align="left" width="150" src="tic-tac-toe-screen.png">
+<img alt="tic-tac-toe screen" align="left" width="200" src="tic-tac-toe-screen.png">
 
 ---
 <p>
