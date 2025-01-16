@@ -1,4 +1,8 @@
+<p>
+<img alt="tic-tac-toe screen" align="left" width="100" src="tic-tac-toe-screen.png">
 # tic-tac-toe_3x3
+</p>
+
 
 ---
 
