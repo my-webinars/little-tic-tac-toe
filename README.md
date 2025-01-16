@@ -1,4 +1,0 @@
-# little-tic-tac-toe
-
----
-

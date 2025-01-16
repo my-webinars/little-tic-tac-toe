@@ -11,6 +11,13 @@ ErrorHandler: TypeAlias = Callable[[Exception], None]
 
 @dataclass(frozen=True)
 class TicTacToe:
+    """Creates a game and implements the main game loop.
+    Parameters:
+    - player1, player2 - players, whose implementation must correspond to the
+    abstract class Player and specify this class for specific conditions
+    - renderer - implementation of a class that inherits the abstract class
+    Renderer to display the current state of the game under specific conditions.
+    """
     player1: Player
     player2: Player
     renderer: Renderer
@@ -20,6 +27,7 @@ class TicTacToe:
         validate_players(self.player1, self.player2)
 
     def play(self, starting_mark: Mark = Mark("X")) -> None:
+        """Implements the main game cycle."""
         game_state = GameState(Grid(), starting_mark)
         while True:
             self.renderer.render(game_state)
@@ -33,6 +41,7 @@ class TicTacToe:
                     self.error_handler(ex)
 
     def get_current_player(self, game_state: GameState) -> Player:
+        """Returns the player whose turn it is to make a move."""
         if game_state.current_mark is self.player1.mark:
             return self.player1
         else:
