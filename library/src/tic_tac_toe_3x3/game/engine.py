@@ -7,7 +7,8 @@ from tic_tac_toe_3x3.logic.exceptions import InvalidMove
 from tic_tac_toe_3x3.logic.models import GameState, Grid, Mark
 from tic_tac_toe_3x3.logic.validators import validate_players
 
-ErrorHandler: TypeAlias = Callable[[Exception], None]
+ErrorHandler: TypeAlias = Callable[[Exception], None] # __call__(self, ex: Exception) -> None
+
 
 @dataclass(frozen=True)
 class TicTacToe:
